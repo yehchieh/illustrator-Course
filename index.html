@@ -64,4 +64,34 @@ home=function(){teachingHome();addResources()};lesson=function(n){teachingLesson
 const teachingRefresh=refreshTeaching;
 refreshTeaching=function(){const link=document.getElementById('resource-nav');if(link)link.remove();teachingRefresh();addResources()};
 addResources();
+</script>
+<script>
+// 加速翻頁：先保留圖片空間，並在背景預先載入前後頁與同單元的圖片。
+(function(){
+ const st=document.createElement('style');
+ st.textContent='.lesson-image{aspect-ratio:16/9;background:#fff linear-gradient(90deg,#fff 0%,#eef4f2 50%,#fff 100%) 0 0/200% 100%;animation:imgwait 1.2s linear infinite}.lesson-image.loaded{animation:none;background:#fff}@keyframes imgwait{to{background-position:-200% 0}}@media (prefers-reduced-motion:reduce){.lesson-image{animation:none}}';
+ document.head.appendChild(st);
+ const cache=new Map();
+ function pre(k){if(k<1||k>pages.length||cache.has(k))return;const i=new Image();i.decoding='async';i.src=pages[k-1].image;cache.set(k,i);}
+ const idle=window.requestIdleCallback||(f=>setTimeout(f,300));
+ function warm(n){
+  [n+1,n-1,n+2].forEach(pre);
+  idle(()=>{const g=pages[n-1].group;pages.filter(x=>x.group===g).forEach(x=>pre(x.n));});
+ }
+ const fastLesson=lesson;
+ lesson=function(n){
+  fastLesson(n);
+  n=Math.max(1,Math.min(pages.length,n));
+  const img=main.querySelector('.lesson-image');
+  if(img){
+   img.fetchPriority='high';img.decoding='async';
+   const done=()=>{img.classList.add('loaded');warm(n);};
+   if(img.complete&&img.naturalWidth)done();else{img.addEventListener('load',done,{once:true});img.addEventListener('error',()=>img.classList.add('loaded'),{once:true});}
+  }
+ };
+ // 滑鼠移到頁碼或單元連結上時，先載入那一頁
+ document.addEventListener('pointerover',e=>{const a=e.target.closest('a[href^="#page-"]');if(a)pre(Number(a.getAttribute('href').slice(6)));});
+ // 目前若已在某一頁，立即套用
+ const m=location.hash.match(/^#page-(\d+)$/);if(m)lesson(Number(m[1]));
+})();
 </script></body></html>
