@@ -1,67 +1,314 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Illustrator｜互動教學索引</title>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Illustrator 第二週教材</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-:root{--ink:#203337;--teal:#007d78;--muted:#627478;--line:#d9e4e2}*{box-sizing:border-box}body{margin:0;background:#f4f7f6;color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC',sans-serif}button,input,a{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer}a{color:var(--teal)}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #edaa45;outline-offset:3px}.top{background:#fff;border-bottom:1px solid var(--line);padding:19px 30px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:20px;font-weight:750;letter-spacing:.5px}.brand small{display:block;font-size:12px;color:var(--teal);letter-spacing:2px}.subtle{color:var(--muted);font-size:13px}.layout{display:grid;grid-template-columns:285px minmax(0,1fr);max-width:1800px;margin:auto}aside{padding:24px 18px;background:#fff;border-right:1px solid var(--line);height:calc(100vh - 96px);position:sticky;top:0;overflow:auto}input{width:100%;padding:11px 13px;border:1px solid #b8cecb;border-radius:9px;background:#f9fbfb}nav{margin-top:20px}nav a{display:flex;justify-content:space-between;gap:10px;text-decoration:none;color:var(--ink);padding:9px 12px;margin:3px 0;border-radius:7px;font-size:14px}nav a.active{background:#dff1ed;color:#005e58;font-weight:700}nav a:hover{background:#edf5f3}main{padding:34px 40px 60px;min-width:0}h1{font-size:36px;line-height:1.3;margin:12px 0}h2{font-size:27px;line-height:1.4;margin:8px 0 16px}.eyebrow{color:var(--teal);font-size:12px;letter-spacing:2px;font-weight:700}.intro{margin:0 0 28px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:22px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}.card:hover{transform:translateY(-3px);box-shadow:0 8px 20px #143b3410;border-color:#73aaa3}.card strong{display:block;font-size:20px;margin:8px 0}.card span{color:var(--muted);font-size:13px}.pill{display:inline-block;background:#e4efeb;border-radius:20px;padding:3px 12px;font-size:12px;color:var(--teal)}.toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:18px 0}.btn{border:1px solid #b8cecb;background:#fff;color:var(--teal);border-radius:8px;padding:8px 14px;text-decoration:none}.btn:disabled{opacity:.35;cursor:default}.lesson-image{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:8px}.page-list{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0}.page-list a{font-size:13px;padding:6px 11px;border:1px solid var(--line);border-radius:7px;text-decoration:none;background:#fff}.page-list a.current{background:var(--teal);color:white}.transcript{white-space:pre-wrap;font-size:17px;line-height:1.9;padding:20px;background:#fff;border-radius:8px}.help{margin-top:26px;color:var(--muted);font-size:13px}details{margin:20px 0}summary{cursor:pointer;color:var(--teal);padding:9px 0}.empty{padding:36px;background:white;border-radius:12px}.mobile-toggle{display:none}.viewer{overflow:auto}.viewer.zoom .lesson-image{width:160%;max-width:none}.skip{position:absolute;left:-999px}.skip:focus{left:15px;top:10px;background:white;padding:10px;z-index:10}footer{margin-top:35px;border-top:1px solid var(--line);padding-top:15px;font-size:12px;color:var(--muted)}
-@media(max-width:800px){.layout{display:block}.top{padding:15px 18px}.top>.subtle{display:none}.mobile-toggle{display:block}aside{display:none;position:static;height:auto;max-height:70vh;border-bottom:1px solid var(--line)}aside.open{display:block}main{padding:24px 18px}h1{font-size:29px}h2{font-size:23px}.cards{grid-template-columns:1fr}.brand{font-size:17px}}
-@media print{aside,.top,.toolbar,.page-list,footer,.help{display:none}.layout{display:block}main{padding:0}.lesson-image{border:0}details{display:none}}
-.viewer:has(+ details[open]) .lesson-image{max-height:680px;width:auto;max-width:100%;margin:auto;object-fit:contain}.viewer.zoom:has(+ details[open]) .lesson-image{max-height:none;width:100%;max-width:none}</style></head><body>
-<a class="skip" href="#main">跳到教學內容</a>
-<header class="top"><div class="brand"><small>DESIGN CLASS / LEARNING LIBRARY</small>Illustrator 功能教學</div><div class="subtle">第二週與延伸教材 · 102 頁 · 功能索引與練習素材</div><button class="btn mobile-toggle" id="menu" aria-expanded="false">功能目錄</button></header>
-<div class="layout"><aside id="sidebar"><label for="search" class="eyebrow">搜尋功能 / 操作 / 快捷鍵</label><input id="search" type="search" placeholder="例如：鋼筆、遮色片、Ctrl" autocomplete="off"><nav id="nav" aria-label="功能分類"></nav><p class="help">點選功能即可開啟教學。<br>前 91 頁依 PDF 順序；新增教學接續於後。</p></aside><main id="main" tabindex="-1"></main></div>
-<script src="assets/lessons.js"></script>
-<script>
-const {pages,groups}=window.lessonData,main=document.getElementById('main'),search=document.getElementById('search');let active=-1;
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const footer='<footer>內容依據：Illustrator_第二週_鋼筆練習整合版_v2.pdf（原 PDF 共 91 頁，第 92–102 頁依本次提供的 Illustrator_對話框教學_可編輯版.pdf 更新）。第 98–102 頁依本次提供的 Illustrator_文字轉折滑順_可編輯版.pdf 更新。保留原講義圖解及教學文字。<br>快捷鍵：Windows 使用 Ctrl / Alt，Mac 使用 Cmd / Option；實際操作以講義各頁標示為準。</footer>';
-function nav(){document.getElementById('nav').innerHTML='<a href="#home"'+(active===-1?' class="active" aria-current="page"':'')+'>所有功能<span>102 頁</span></a>'+groups.map((g,i)=>`<a href="#page-${g[1]}"${active===i?' class="active" aria-current="page"':''}>${esc(g[0])}<span>${g[1]}–${g[2]}</span></a>`).join('')}
-function home(){active=-1;nav();main.innerHTML='<div class="eyebrow">選一個功能，開始練習</div><h1>今天想學哪個工具？</h1><p class="intro">從文字造型、鋼筆路徑到圖片遮色片。點選下方單元，直接查看操作與示意圖。</p><div class="cards">'+groups.map((g,i)=>`<a class="card" href="#page-${g[1]}"><span class="pill">${i>=28?'新增文字效果':i>=25?'新增對話框教學':i<15?'基礎與課堂操作':i===24?'教材索引':'延伸教學'}</span><strong>${esc(g[0])}</strong><span>${g[2]-g[1]+1} 頁教學 · 教學第 ${g[1]}–${g[2]} 頁 →</span></a>`).join('')+'</div>'+footer}
-function lesson(n){n=Math.max(1,Math.min(pages.length,n));const p=pages[n-1],g=groups[p.group];active=p.group;nav();main.innerHTML=`<div class="eyebrow">${esc(g[0])} / 教學第 ${n} 頁</div><h1>${esc(p.title)}</h1><div class="page-list" aria-label="本單元頁面">${pages.filter(x=>x.group===p.group).map(x=>`<a href="#page-${x.n}" class="${x.n===n?'current':''}" ${x.n===n?'aria-current="page"':''}>${x.n} · ${esc(x.title)}</a>`).join('')}</div><div class="toolbar"><div><button class="btn" id="prev" ${n===1?'disabled':''}>← 上一頁</button> <button class="btn" id="next" ${n===pages.length?'disabled':''}>下一頁 →</button></div><div><span class="subtle">${n} / ${pages.length}　</span><button class="btn" id="zoom" aria-pressed="false">放大圖解</button></div></div><div class="viewer" id="viewer"><img class="lesson-image" src="${p.image}" alt="第 ${n} 頁：${esc(p.title)}；完整文字列於下方"></div><details ${p.tutorial?'open':''}><summary>查看本頁文字（可選取複製）</summary><div class="transcript">${esc(p.text)}</div></details><div class="toolbar"><a class="btn" href="#home">回到所有功能</a><a class="btn" href="#page-${n<pages.length?n+1:1}">${n<pages.length?'繼續下一頁 →':'回到第一頁'}</a></div>`+footer;
- document.getElementById('prev').onclick=()=>location.hash='page-'+(n-1);document.getElementById('next').onclick=()=>location.hash='page-'+(n+1);document.getElementById('zoom').onclick=e=>{let z=document.getElementById('viewer').classList.toggle('zoom');e.target.textContent=z?'恢復大小':'放大圖解';e.target.setAttribute('aria-pressed',z)};
+/* Layout: artboard workspace — left panel = tool index (like Illustrator's tool panel), right = slides on a canvas */
+:root{
+  --bg:#f3f5f4; --panel:#ffffff; --ink:#1d2523; --muted:#5f6d6a; --line:#dde3e1;
+  --accent:#16807a; --accent-soft:#e2f1ef; --anchor:#c9612b;
+  --canvas:#e8ecea; --shadow:0 1px 2px rgba(20,40,36,.08),0 6px 20px rgba(20,40,36,.07);
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --side:300px;
 }
-function results(q){active=-1;nav();const terms=q.toLowerCase().trim().split(/\s+/),found=pages.filter(p=>terms.every(t=>(p.title+' '+p.text+' '+groups[p.group][0]).toLowerCase().includes(t)));main.innerHTML='<div class="eyebrow">全文搜尋</div><h1>搜尋「'+esc(q)+'」</h1><p class="intro" role="status">找到 '+found.length+' 頁相關教學</p><div class="cards">'+found.map(p=>`<a class="card" href="#page-${p.n}"><span class="pill">${esc(groups[p.group][0])}</span><strong>${esc(p.title)}</strong><span>教學第 ${p.n} 頁 · 查看教學 →</span></a>`).join('')+'</div>'+(!found.length?'<p class="empty">沒有找到相關頁面，請改用較短的詞，例如「鋼筆」「遮色片」或「筆刷」。</p>':'')+footer}
-function route(){const h=location.hash.slice(1);if(h.startsWith('search=')){search.value=decodeURIComponent(h.slice(7));results(search.value)}else{search.value='';let m=h.match(/^page-(\d+)$/);m?lesson(Number(m[1])):home()}document.getElementById('sidebar').classList.remove('open');document.getElementById('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0)}
-search.addEventListener('input',()=>{let q=search.value.trim();history.replaceState(null,'',q?'#search='+encodeURIComponent(q):'#home');q?results(q):home()});window.addEventListener('hashchange',route);document.getElementById('menu').onclick=e=>{let open=document.getElementById('sidebar').classList.toggle('open');e.target.setAttribute('aria-expanded',open)};document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,button')||e.altKey||e.ctrlKey||e.metaKey)return;let m=location.hash.match(/^#page-(\d+)$/);if(m&&['ArrowLeft','ArrowRight'].includes(e.key)){let n=Number(m[1])+(e.key==='ArrowRight'?1:-1);if(n>=1&&n<=pages.length)location.hash='page-'+n}});route();
-</script><script>
-// Teaching progress is stored locally, independently of the lesson content.
-const progressKey='illustrator-teaching-progress-v1';
-let taught=new Set(),storageOK=true;
-try{const saved=JSON.parse(localStorage.getItem(progressKey)||'[]');if(Array.isArray(saved))taught=new Set(saved.filter(n=>Number.isInteger(n)&&n>=1&&n<=pages.length));}catch(e){storageOK=false;}
-const progressStyle=document.createElement('style');progressStyle.textContent=`
-.teaching-progress{padding:15px 12px;margin:18px 0;background:#edf5f2;border-radius:9px}.teaching-progress progress{width:100%;accent-color:var(--teal)}.teaching-progress p{font-size:12px;margin:8px 0;color:var(--muted)}.teach-check{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;font-size:14px;color:var(--ink)}.teach-check input{width:19px;height:19px;margin:0;accent-color:var(--teal);flex-shrink:0}.teach-card{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden}.teach-card>.card{display:block;border:0;border-radius:0;box-shadow:none}.teach-card>.teach-check{border-top:1px solid var(--line)}.teach-card.done{border-color:#6da99d;background:#f2faf6}.progress-actions{display:flex;gap:7px;flex-wrap:wrap}.progress-actions .btn{font-size:12px;padding:5px 8px}#progress-message{font-size:12px;color:var(--teal)}@media print{.teach-check,.teaching-progress{display:none}}`;
-document.head.appendChild(progressStyle);
-const progressBox=document.createElement('section');progressBox.className='teaching-progress';progressBox.setAttribute('aria-label','授課進度');document.getElementById('sidebar').insertBefore(progressBox,document.getElementById('nav'));
-function saveProgress(){try{localStorage.setItem(progressKey,JSON.stringify([...taught].sort((a,b)=>a-b)));storageOK=true;}catch(e){storageOK=false;}}
-function checkControl(numbers,label){const el=document.createElement('label');el.className='teach-check';const box=document.createElement('input');box.type='checkbox';const count=numbers.filter(n=>taught.has(n)).length;box.checked=count===numbers.length;box.indeterminate=count>0&&count<numbers.length;const caption=document.createElement('span');caption.textContent=label+(numbers.length>1?`（${count}/${numbers.length} 頁）`:'');el.append(box,caption);box.addEventListener('change',()=>{numbers.forEach(n=>box.checked?taught.add(n):taught.delete(n));saveProgress();refreshTeaching();});return el;}
-function refreshTeaching(){
- document.querySelectorAll('.teach-check').forEach(el=>el.remove());
- progressBox.innerHTML=`<strong>授課進度：${taught.size} / ${pages.length} 頁</strong><progress value="${taught.size}" max="${pages.length}" aria-label="已教過的頁數"></progress><p>${storageOK?'已自動儲存於此瀏覽器。':'此瀏覽器無法儲存，請匯出進度備份。'}<br>換電腦、瀏覽器或移動檔案前，請先匯出進度。</p><div class="progress-actions"><button class="btn" id="export-progress">匯出進度</button><button class="btn" id="import-progress">匯入進度</button></div><input id="progress-file" type="file" accept=".json,application/json" hidden><div id="progress-message" role="status"></div>`;
- document.querySelectorAll('#main .cards .card').forEach(card=>{let wrap=card.parentElement;if(!wrap.classList.contains('teach-card')){wrap=document.createElement('div');wrap.className='teach-card';card.replaceWith(wrap);wrap.append(card);}const n=Number(card.getAttribute('href').split('-').pop());const isHome=!location.hash.startsWith('#search=');const g=groups.find(g=>g[1]===n);const nums=isHome&&g?Array.from({length:g[2]-g[1]+1},(_,i)=>g[1]+i):[n];wrap.classList.toggle('done',nums.every(n=>taught.has(n)));wrap.append(checkControl(nums,nums.length>1?'整個單元已教過':'已教過'));});
- const match=location.hash.match(/^#page-(\d+)$/);if(match){const n=Math.max(1,Math.min(pages.length,Number(match[1])));const toolbar=main.querySelector('.toolbar');if(toolbar)toolbar.prepend(checkControl([n],'本頁已教過'));}
- document.querySelectorAll('#nav a').forEach((a,i)=>{if(!i)return;const g=groups[i-1],total=g[2]-g[1]+1,count=Array.from({length:total},(_,j)=>g[1]+j).filter(n=>taught.has(n)).length;a.querySelector('span').textContent=`${count===total?'✓ ':''}${count}/${total}`;});
- document.getElementById('export-progress').onclick=()=>{const blob=new Blob([JSON.stringify({format:progressKey,savedAt:new Date().toISOString(),taught:[...taught].sort((a,b)=>a-b)},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Illustrator_授課進度.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
- document.getElementById('import-progress').onclick=()=>document.getElementById('progress-file').click();
- document.getElementById('progress-file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(data.format!==progressKey||!Array.isArray(data.taught)||!data.taught.every(n=>Number.isInteger(n)&&n>=1&&n<=pages.length))throw Error();data.taught.forEach(n=>taught.add(n));saveProgress();refreshTeaching();document.getElementById('progress-message').textContent='已合併匯入進度。';}catch(err){document.getElementById('progress-message').textContent='檔案格式不符，請選取匯出的授課進度 JSON。';}};
-}
-const originalHome=home,originalLesson=lesson,originalResults=results;
-home=function(){originalHome();refreshTeaching()};lesson=function(n){originalLesson(n);refreshTeaching()};results=function(q){originalResults(q);refreshTeaching()};
-refreshTeaching();
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141a19; --panel:#1b2221; --ink:#e6ecea; --muted:#9aa9a5; --line:#2c3634;
+  --accent:#4fbcb3; --accent-soft:#1d3532; --anchor:#e98b55; --canvas:#101514;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.3); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141a19; --panel:#1b2221; --ink:#e6ecea; --muted:#9aa9a5; --line:#2c3634;
+  --accent:#4fbcb3; --accent-soft:#1d3532; --anchor:#e98b55; --canvas:#101514;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.3); color-scheme:dark}
+html,body{height:100%}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 
-</script><script id="resource-data" type="application/json">[{"id": "pen-original", "filename": "Illustrator_鋼筆練習_.jpg", "title": "鋼筆練習圖片底稿", "description": "置入後降低不透明度並鎖定，在新圖層描線。", "pages": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], "type": "JPG", "mime": "image/jpeg", "size": "8.8 MB", "url": "downloads/pen-original.jpg"}, {"id": "pen-basic", "filename": "Illustrator_鋼筆練習_單頁.svg", "title": "五種基本圖形練習", "description": "小屋、C 型、S 型、曲線接直線與葉片輪廓。", "pages": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], "type": "SVG", "mime": "image/svg+xml", "size": "1 KB", "url": "downloads/pen-basic.svg"}, {"id": "pen-1", "filename": "鋼筆練習_按鍵標註_01.svg", "title": "鋼筆練習 01：基本圖形", "description": "附操作順序、拖曳方向與搭配按鍵。", "pages": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], "type": "SVG", "mime": "image/svg+xml", "size": "7 KB", "url": "downloads/pen-1.svg"}, {"id": "pen-2", "filename": "鋼筆練習_按鍵標註_02.svg", "title": "鋼筆練習 02：直線與波浪", "description": "直線、45°／90° 與波浪曲線練習。", "pages": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], "type": "SVG", "mime": "image/svg+xml", "size": "7 KB", "url": "downloads/pen-2.svg"}, {"id": "pen-3", "filename": "鋼筆練習_按鍵標註_03.svg", "title": "鋼筆練習 03：進階線段", "description": "斜向曲線、M 曲線與混合線段練習。", "pages": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], "type": "SVG", "mime": "image/svg+xml", "size": "8 KB", "url": "downloads/pen-3.svg"}]</script><script>const resources=JSON.parse(document.getElementById('resource-data').textContent);
-const resourceStyle=document.createElement('style');resourceStyle.textContent='.resources{margin:28px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:12px}.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.resource-item{border:1px solid var(--line);padding:16px;border-radius:9px}.resource-item strong{display:block;margin:8px 0}.resource-item p{font-size:14px;color:var(--muted)}.resource-item .btn{display:inline-block;font-size:14px}.resource-item small{display:block;color:var(--muted);margin-bottom:12px}@media print{.resources{display:none}}';document.head.appendChild(resourceStyle);
-function resourceCards(items){return '<div class="resource-grid">'+items.map(r=>`<article class="resource-item"><span class="pill">${esc(r.type)}</span><strong>${esc(r.title)}</strong><p>${esc(r.description)}</p><small>${esc(r.filename)} · ${r.size}</small><button class="btn" data-download="${r.id}">下載 ${esc(r.type)} ↓</button></article>`).join('')+'</div>';}
-function addResources(){
- document.querySelectorAll('.resources').forEach(el=>el.remove());
- if(!document.getElementById('resource-nav')){const a=document.createElement('a');a.id='resource-nav';a.href='#resources';a.textContent='↓ 補充資料下載';document.getElementById('nav').append(a);}
- const hash=location.hash;const match=hash.match(/^#page-(\d+)$/);let items=match?resources.filter(r=>r.pages.includes(Number(match[1]))):resources;
- if(hash.startsWith('#search='))return;
- if(hash==='#resources'){main.innerHTML='<div class="eyebrow">練習素材 / DOWNLOADS</div><h1>補充資料下載</h1><p class="intro">下載底稿後，在 Illustrator 中開啟或置入，搭配教學練習。SVG 可用 Illustrator 開啟並另存 AI；JPG／PNG 是圖片底稿。</p>'+resourceCards(resources)+'<p class="help">目前提供鋼筆練習的 JPG 與 SVG，尚未收錄 AI 原始檔。下載素材收錄於網站資料夾，請保留資料夾結構。</p>'+footer;}
- else if(items.length){const box=document.createElement('section');box.className='resources';box.innerHTML='<h2>補充資料下載</h2><p class="subtle">'+(match?'搭配本單元使用的練習檔。':'鋼筆練習底稿與向量檔，可直接下載。')+' SVG 可由 Illustrator 開啟並另存 AI。</p>'+resourceCards(items);const foot=main.querySelector('footer');main.insertBefore(box,foot);}
+.app{display:grid;grid-template-columns:var(--side) minmax(0,1fr);height:100%}
+aside{background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+.brand{padding:20px 20px 14px;border-bottom:1px solid var(--line);cursor:pointer}
+.brand small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.brand b{display:block;font-size:18px;font-weight:700;margin-top:2px}
+.brand span{font-size:13px;color:var(--muted)}
+.search{padding:12px 16px;border-bottom:1px solid var(--line)}
+.search input{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:14px}
+.search input:focus{outline:none;border-color:var(--accent)}
+nav{overflow-y:auto;padding:8px 10px 24px;flex:1;min-height:0}
+.grp{margin-top:10px}
+.grp-h{width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:8px 10px 4px;background:none;border:0;cursor:pointer;text-align:left}
+.grp-h b{font-size:13px;font-weight:700;letter-spacing:.04em}
+.grp-h small{font-size:11px;color:var(--muted);font-family:var(--f-mono)}
+.item{width:100%;display:flex;align-items:center;gap:10px;padding:7px 10px;border:0;background:none;border-radius:7px;cursor:pointer;text-align:left;font-size:14px}
+.item:hover{background:var(--bg)}
+.item .dot{width:7px;height:7px;flex:none;border:1.5px solid var(--muted);background:var(--panel)}
+.item .nm{flex:1;min-width:0}
+.item kbd,.kbd{font-family:var(--f-mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px;white-space:nowrap}
+.item[aria-current="true"]{background:var(--accent-soft);color:var(--accent);font-weight:500}
+.item[aria-current="true"] .dot{background:var(--accent);border-color:var(--accent)}
+.item[hidden],.grp[hidden]{display:none}
+.empty{padding:16px 12px;color:var(--muted);font-size:13px}
+
+main{overflow-y:auto;min-height:0;background:var(--canvas)}
+.wrap{max-width:1080px;margin:0 auto;padding-block:32px 64px;padding-inline:clamp(16px,3vw,40px)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(24px,3vw,32px);line-height:1.25;margin:4px 0 6px;text-wrap:balance;font-weight:700}
+.meta{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--muted);font-size:13px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:4px 12px;font-size:13px;cursor:pointer}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.slides{display:flex;flex-direction:column;gap:28px;margin-top:24px}
+figure{margin:0}
+.frame{background:#fff;border-radius:6px;box-shadow:var(--shadow);overflow:hidden;cursor:zoom-in;display:block;width:100%;border:0;padding:0}
+.frame img{display:block;width:100%;height:auto;aspect-ratio:16/9}
+figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:13px;color:var(--muted)}
+figcaption .pg{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.pager button{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-align:left;cursor:pointer;min-width:0}
+.pager button:hover{border-color:var(--accent)}
+.pager button.next{text-align:right}
+.pager small{display:block;font-size:12px;color:var(--muted)}
+.pager b{font-weight:500}
+.pager button[disabled]{visibility:hidden}
+
+/* Home */
+.hero p{color:var(--muted);max-width:60ch;margin:6px 0 0}
+.how{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:13px;color:var(--muted)}
+.how span::before{content:"";display:inline-block;width:6px;height:6px;border:1.5px solid var(--anchor);margin-right:8px;vertical-align:middle}
+.sec{margin-top:36px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:14px}
+.sec-h h2{font-size:18px;margin:0}
+.sec-h small{color:var(--muted);font-size:12px;font-family:var(--f-mono)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;text-align:left;padding:0;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#fff;border-bottom:1px solid var(--line)}
+.card .cb{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.card .ct{font-weight:500;font-size:14px;line-height:1.4}
+.card .cm{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,14,13,.92);display:flex;align-items:center;justify-content:center;z-index:50;padding:calc(env(safe-area-inset-top,0px) + 48px) 16px calc(env(safe-area-inset-bottom,0px) + 48px)}
+.lb img{max-width:100%;max-height:100%;border-radius:4px;background:#fff}
+.lb .bar{position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;color:#e6ecea;font-size:14px;gap:12px}
+.lb button{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:8px;padding:8px 14px;cursor:pointer}
+.lb .nav{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);left:0;right:0;display:flex;justify-content:center;gap:10px}
+
+/* Mobile */
+.topbar{display:none}
+@media (max-width:820px){
+  .app{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line)}
+  .topbar b{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .topbar button{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:6px 12px;cursor:pointer;flex:none}
+  aside{position:fixed;inset:0;z-index:40;transform:translateX(-100%);transition:transform .2s;padding-top:env(safe-area-inset-top,0px)}
+  aside.open{transform:none}
+  .close-side{display:block!important}
+  .pager{grid-template-columns:1fr}
 }
-document.addEventListener('click',e=>{const button=e.target.closest('[data-download]');if(!button)return;const r=resources.find(x=>x.id===button.dataset.download);if(!r)return;const url=r.url;const a=document.createElement('a');a.href=url;a.download=r.filename;document.body.appendChild(a);a.click();a.remove();});
-const teachingHome=home,teachingLesson=lesson,teachingResults=results;
-home=function(){teachingHome();addResources()};lesson=function(n){teachingLesson(n);addResources()};results=function(q){teachingResults(q);addResources()};
-// Progress refresh must ignore the additional download navigation link.
-const teachingRefresh=refreshTeaching;
-refreshTeaching=function(){const link=document.getElementById('resource-nav');if(link)link.remove();teachingRefresh();addResources()};
-addResources();
-</script></body></html>
+.close-side{display:none;position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:4px 10px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body style="margin:0">
+
+<div class="app">
+  <div class="topbar"><b id="tbTitle">Illustrator 第二週</b><button id="openSide" type="button">目錄</button></div>
+  <aside id="side">
+    <button class="close-side" id="closeSide" type="button">關閉</button>
+    <div class="brand" id="home" role="button" tabindex="0">
+      <small>Design Foundations / 02</small>
+      <b>Illustrator 第二週</b>
+      <span>文字與圖形造型・鋼筆練習整合版</span>
+    </div>
+    <div class="search"><input id="q" type="search" placeholder="搜尋功能，例如：鋼筆、遮色片、Shift+W" autocomplete="off"></div>
+    <nav id="nav"></nav>
+  </aside>
+  <main id="main"><div class="wrap" id="view"></div></main>
+</div>
+<div class="lb" id="lb" hidden>
+  <div class="bar"><span id="lbCap"></span><button id="lbClose" type="button">關閉 Esc</button></div>
+  <img id="lbImg" alt="">
+  <div class="nav"><button id="lbPrev" type="button">← 上一頁</button><button id="lbNext" type="button">下一頁 →</button></div>
+</div>
+
+<script>
+const PAGE_TITLES = [
+"文字與圖形造型（封面）","從第一週接續：選對要改的部分","本堂進度","操作前：保留可以回頭修改的版本","文字、路徑、效果是不同狀態",
+"觸控文字：逐字調整節奏","字的變化，需要共同的閱讀秩序","鋼筆描字：用筆畫建立字形","鋼筆 Level 2：由直線進入曲線","鋼筆練習準備：只看路徑與筆畫",
+"錨點、路徑與方向把手","練習 1：五個點畫出小屋","練習 2：兩個錨點畫 C 型曲線","練習 3：兩個錨點畫 S 型曲線","練習 4：曲線接直線",
+"練習 5：葉片尖角與分離把手","常見錯誤：多點、折角與多餘把手","鋼筆練習 01：基本圖形與操作按鍵（1–3）","鋼筆練習 01：基本圖形與操作按鍵（4–5）","鋼筆練習 02：舊教材的直線與波浪（6–7）",
+"鋼筆練習 02：舊教材的直線與波浪（8）","鋼筆練習 03：斜向曲線、M 曲線（9–10）","鋼筆練習 03：曲線與直線切換（11）","20 分鐘鋼筆描線練習","鋼筆快捷鍵與描字銜接",
+"描字操作：每一筆都能獨立調整","圖片剪裁遮色片：形狀決定可見範圍","準備圖片：置入與檔案連結","製作遮色片：形狀在上，圖片在下","修改構圖：分清圖片與遮色片路徑",
+"解除遮色片：找回完整圖片","常見問題：順序、選取與描邊","剪裁遮色片與不透明度遮色片","8 分鐘練習：同一張圖，兩種剪裁","寬度工具：讓筆畫有粗細變化",
+"圓端點與圓角接合","三個容易混淆的轉換指令","描字完成後：展開與分色","裝飾邊框：從橢圓開始","鋸齒化：振幅、密度與轉角",
+"效果完成後，仍能回頭修改","展開後，調整局部圓角","剪刀工具：在路徑上留下開口","接回曲線：兩個端點才能連接","手感字：用粗糙化改變邊緣",
+"粗糙化參數：小幅度開始","手感字定稿：外框與擴充外觀","位移複製：沿輪廓向外或向內","位移複製：數值與轉角設定","星形工具：兩個半徑與頂點數",
+"從星形變花形：加粗與圓角接合","旋轉複製：先決定旋轉中心","按「拷貝」，再重複上次變形","變更寬度描述檔：線條變花瓣","把放射線條組合進花形",
+"圓點虛線：圓端點 + 破折號 0","圓點邊框：調整分布與收尾","縮攏與膨脹：正方形變成星光","星光參數：負值與即時預覽","蜘蛛網：同心多邊形與縮攏",
+"課堂整合練習：短標題與裝飾邊框","常見問題：先看目前的物件狀態","第二週快捷鍵與操作總結","延伸單元導覽","影像描圖：由點陣轉成路徑",
+"個別變形：各自縮放，保留排列","郵票邊線：圓點框線與減去上層","寬度工具延伸：容器造型","漸變與漸層：物件與色彩的差別","沿路徑漸變：Replace Spine",
+"漸變應用：從單一元素延伸版面","圖樣：從網格建立重複單元","圖樣填色：接縫與密度","圖樣筆刷：沿著路徑重複圖案","線條筆刷：把圖形沿線延展",
+"符號工具：大量放置相同元素","反轉文字：重疊區域形成反差","封套網格：讓整片格線彎曲","外觀重複使用：同一套文字效果","粒子質感：漸層加上紋理",
+"促銷版面：放射背景與剪裁遮色片","促銷版面：外光暈與文字外觀","直排文字中的數字：組文字","稻穗：葉片、漸變與線條筆刷","稻穗環：剪開圓形再套筆刷",
+"融入背景：透明漸層與模糊","網線銅版：讓模糊邊緣變成顆粒","網點：先做單色明暗，再轉向量","網點定稿：展開、改色與節點數","新增快捷鍵：畫面、筆刷與儲存",
+"教材對照與去重紀錄"];
+const r=(a,b)=>Array.from({length:b-a+1},(_,i)=>a+i);
+const GROUPS = [
+ {id:"start", label:"開始", sub:"課程概覽與準備", items:[
+  {id:"intro", t:"課程封面與進度", p:[1,2,3]},
+  {id:"setup", t:"保留可修改版本", p:[4,5]},
+ ]},
+ {id:"g1", label:"01 文字造型", sub:"原講義 p.2–3", items:[
+  {id:"touch", t:"觸控文字", k:"Shift+T", p:[6,7]},
+  {id:"pentrace", t:"鋼筆描字概念", k:"P", p:[8]},
+  {id:"penbasic", t:"鋼筆基礎：錨點與把手", k:"P / A", p:[9,10,11]},
+  {id:"pen15", t:"鋼筆練習 1–5", p:[12,13,14,15,16]},
+  {id:"penerr", t:"鋼筆常見錯誤", p:[17]},
+  {id:"pen0103", t:"鋼筆練習 01–03 圖解", p:r(18,23)},
+  {id:"pen20", t:"20 分鐘描線練習", p:[24]},
+  {id:"penkey", t:"鋼筆快捷鍵", p:[25]},
+  {id:"traceop", t:"描字操作", p:[26]},
+  {id:"clip", t:"剪裁遮色片", k:"Ctrl/Cmd+7", p:r(27,34)},
+  {id:"width", t:"寬度工具", k:"Shift+W", p:[35]},
+  {id:"stroke", t:"圓端點與圓角接合", p:[36]},
+  {id:"convert", t:"建立外框／外框筆畫／擴充外觀", p:[37,38]},
+ ]},
+ {id:"g2", label:"02 路徑與效果", sub:"原講義 p.4–7", items:[
+  {id:"zigzag", t:"鋸齒化裝飾邊框", p:[39,40,41,42]},
+  {id:"scissors", t:"剪刀工具", k:"C", p:[43]},
+  {id:"join", t:"連接路徑", k:"Ctrl/Cmd+J", p:[44]},
+  {id:"roughen", t:"粗糙化手感字", p:[45,46,47]},
+  {id:"offset", t:"位移複製", p:[48,49]},
+ ]},
+ {id:"g3", label:"03 圖形整合", sub:"原講義 p.8–10、12", items:[
+  {id:"star", t:"星形工具與花形", p:[50,51]},
+  {id:"rotate", t:"旋轉複製", k:"R / Ctrl+D", p:[52,53]},
+  {id:"profile", t:"寬度描述檔與花形組合", p:[54,55]},
+  {id:"dots", t:"圓點虛線", p:[56,57]},
+  {id:"pucker", t:"縮攏與膨脹", p:[58,59,60]},
+ ]},
+ {id:"wrap", label:"整合與總結", sub:"課堂練習・問題・快捷鍵", items:[
+  {id:"project", t:"課堂整合練習", p:[61]},
+  {id:"faq", t:"常見問題排查", p:[62]},
+  {id:"keys", t:"第二週快捷鍵總結", p:[63]},
+ ]},
+ {id:"ext", label:"延伸單元", sub:"A–F 進階應用", items:[
+  {id:"extmap", t:"延伸單元導覽", p:[64]},
+  {id:"trace", t:"A 影像描圖", p:[65]},
+  {id:"transform", t:"A 個別變形", p:[66]},
+  {id:"stamp", t:"A 郵票邊線", p:[67]},
+  {id:"vessel", t:"A 寬度工具：容器造型", p:[68]},
+  {id:"blend", t:"B 漸變與 Replace Spine", p:[69,70,71]},
+  {id:"pattern", t:"B 圖樣", p:[72,73]},
+  {id:"pbrush", t:"B 圖樣筆刷", p:[74]},
+  {id:"abrush", t:"B 線條筆刷", p:[75]},
+  {id:"symbol", t:"C 符號工具", k:"Shift+S", p:[76]},
+  {id:"invert", t:"C 反轉文字（差集）", p:[77]},
+  {id:"envelope", t:"C 封套網格", p:[78]},
+  {id:"appear", t:"C 外觀與圖形樣式", p:[79]},
+  {id:"grain", t:"D 粒子質感", p:[80]},
+  {id:"promo", t:"D 促銷版面", p:[81,82]},
+  {id:"tcy", t:"E 直排組文字", p:[83]},
+  {id:"wheat", t:"E 稻穗與稻穗環", p:[84,85]},
+  {id:"blur", t:"F 模糊與網線銅版", p:[86,87]},
+  {id:"halftone", t:"F 彩色網屏網點", p:[88,89]},
+  {id:"morekeys", t:"新增快捷鍵", p:[90]},
+  {id:"sources", t:"教材對照與來源", p:[91]},
+ ]},
+];
+
+const IMG = Array.from({length:91},(_,i)=>`slides/p-${String(i+1).padStart(2,"0")}.webp`);
+const TH = Array.from({length:91},(_,i)=>`thumbs/p-${String(i+1).padStart(2,"0")}.webp`);
+const ALL = [];
+GROUPS.forEach(g=>g.items.forEach(it=>{it.g=g;ALL.push(it)}));
+const byId = Object.fromEntries(ALL.map(i=>[i.id,i]));
+const $ = s=>document.querySelector(s);
+const nav=$("#nav"), view=$("#view"), main=$("#main"), side=$("#side");
+const range = p=> p.length>1 ? `第 ${p[0]}–${p[p.length-1]} 頁` : `第 ${p[0]} 頁`;
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function buildNav(){
+  nav.innerHTML = GROUPS.map(g=>`<div class="grp" data-g="${g.id}">
+    <div class="grp-h"><b>${esc(g.label)}</b><small>${esc(g.sub)}</small></div>
+    ${g.items.map(it=>`<button class="item" type="button" data-id="${it.id}"><i class="dot"></i><span class="nm">${esc(it.t)}</span>${it.k?`<kbd>${esc(it.k)}</kbd>`:""}</button>`).join("")}
+  </div>`).join("") + `<div class="empty" id="empty" hidden>找不到符合的功能，換個關鍵字試試。</div>`;
+  nav.addEventListener("click",e=>{const b=e.target.closest(".item"); if(b) go(b.dataset.id)});
+}
+function filter(q){
+  q=q.trim().toLowerCase(); let any=false;
+  document.querySelectorAll(".grp").forEach(gEl=>{
+    let vis=0;
+    gEl.querySelectorAll(".item").forEach(b=>{
+      const it=byId[b.dataset.id];
+      const hay=(it.t+" "+(it.k||"")+" "+it.p.map(n=>PAGE_TITLES[n-1]).join(" ")+" "+it.g.label).toLowerCase();
+      const ok=!q||hay.includes(q); b.hidden=!ok; if(ok)vis++;
+    });
+    gEl.hidden=!vis; if(vis)any=true;
+  });
+  $("#empty").hidden=any;
+}
+function card(it){
+  return `<button class="card" type="button" data-id="${it.id}"><img src="${TH[it.p[0]-1]}" alt="" loading="lazy"><div class="cb"><span class="ct">${esc(it.t)}</span><span class="cm"><span>${range(it.p)}</span>${it.k?`<span class="kbd">${esc(it.k)}</span>`:""}</span></div></button>`;
+}
+function renderHome(){
+  view.innerHTML = `<div class="hero"><div class="eyebrow">Adobe Illustrator ・ 多媒體設計</div>
+    <h1>文字與圖形造型：從基本操作，進入字形、筆畫與裝飾邊框</h1>
+    <p>點選任一功能，直接看那一部分的教學投影片。左側目錄可隨時切換，也能用搜尋找工具名稱或快捷鍵。</p>
+    <div class="how"><span>點投影片可放大</span><span>← → 鍵切換功能</span><span>共 ${PAGE_TITLES.length} 頁・${ALL.length} 個主題</span></div></div>
+    ${GROUPS.map(g=>`<section class="sec"><div class="sec-h"><h2>${esc(g.label)}</h2><small>${esc(g.sub)}</small></div><div class="grid">${g.items.map(card).join("")}</div></section>`).join("")}`;
+  view.querySelectorAll(".card").forEach(c=>c.onclick=()=>go(c.dataset.id));
+  $("#tbTitle").textContent="Illustrator 第二週";
+}
+let cur=null;
+function renderTopic(it){
+  const i=ALL.indexOf(it), prev=ALL[i-1], next=ALL[i+1];
+  const titles=[...new Set(it.p.map(n=>PAGE_TITLES[n-1]))];
+  view.innerHTML = `<div class="eyebrow">${esc(it.g.label)}</div>
+    <h1>${esc(it.t)}</h1>
+    <div class="meta"><span>${range(it.p)}・共 ${it.p.length} 頁</span>${it.k?`<span>快捷鍵 <span class="kbd">${esc(it.k)}</span></span>`:""}</div>
+    ${it.p.length>1?`<div class="chips">${it.p.map(n=>`<button class="chip" type="button" data-jump="${n}">${n}・${esc(PAGE_TITLES[n-1])}</button>`).join("")}</div>`:""}
+    <div class="slides">${it.p.map(n=>`<figure id="s${n}"><button class="frame" type="button" data-p="${n}" aria-label="放大第 ${n} 頁"><img src="${IMG[n-1]}" alt="${esc(PAGE_TITLES[n-1])}" ${n===it.p[0]?"":'loading="lazy"'}></button><figcaption><span>${esc(PAGE_TITLES[n-1])}</span><span class="pg">${String(n).padStart(2,"0")} / ${PAGE_TITLES.length}</span></figcaption></figure>`).join("")}</div>
+    <div class="pager"><button type="button" class="prev" ${prev?`data-id="${prev.id}"`:"disabled"}><small>← 上一個功能</small><b>${prev?esc(prev.t):""}</b></button><button type="button" class="next" ${next?`data-id="${next.id}"`:"disabled"}><small>下一個功能 →</small><b>${next?esc(next.t):""}</b></button></div>`;
+  view.querySelectorAll(".chip").forEach(c=>c.onclick=()=>document.getElementById("s"+c.dataset.jump).scrollIntoView({behavior:"smooth",block:"start"}));
+  view.querySelectorAll(".frame").forEach(f=>f.onclick=()=>openLb(it,+f.dataset.p));
+  view.querySelectorAll(".pager button[data-id]").forEach(b=>b.onclick=()=>go(b.dataset.id));
+  $("#tbTitle").textContent=it.t;
+}
+function go(id,push=true){
+  const it=byId[id];
+  cur=it||null;
+  if(it) renderTopic(it); else renderHome();
+  document.querySelectorAll(".item").forEach(b=>b.setAttribute("aria-current",b.dataset.id===id?"true":"false"));
+  const act=nav.querySelector(`.item[data-id="${id}"]`); if(act) act.scrollIntoView({block:"nearest"});
+  main.scrollTop=0; side.classList.remove("open");
+  if(push){ try{ history.replaceState(null,"",it?"#"+id:location.pathname+location.search) }catch(e){} }
+}
+// Lightbox
+let lbList=[], lbI=0;
+function openLb(it,n){lbList=it.p; lbI=it.p.indexOf(n); showLb(); $("#lb").hidden=false}
+function showLb(){const n=lbList[lbI]; $("#lbImg").src=IMG[n-1]; $("#lbCap").textContent=`${n}・${PAGE_TITLES[n-1]}`; $("#lbPrev").disabled=lbI===0; $("#lbNext").disabled=lbI===lbList.length-1}
+$("#lbClose").onclick=()=>$("#lb").hidden=true;
+$("#lb").onclick=e=>{if(e.target.id==="lb")$("#lb").hidden=true};
+$("#lbPrev").onclick=()=>{if(lbI>0){lbI--;showLb()}};
+$("#lbNext").onclick=()=>{if(lbI<lbList.length-1){lbI++;showLb()}};
+document.addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT")return;
+  if(!$("#lb").hidden){ if(e.key==="Escape")$("#lb").hidden=true; if(e.key==="ArrowLeft")$("#lbPrev").click(); if(e.key==="ArrowRight")$("#lbNext").click(); return;}
+  const i=cur?ALL.indexOf(cur):-1;
+  if(e.key==="ArrowRight"&&i<ALL.length-1)go(ALL[i+1].id);
+  if(e.key==="ArrowLeft"){ if(i>0)go(ALL[i-1].id); else if(i===0)go(null);}
+});
+$("#q").addEventListener("input",e=>filter(e.target.value));
+$("#home").onclick=()=>go(null);
+$("#home").onkeydown=e=>{if(e.key==="Enter")go(null)};
+$("#openSide").onclick=()=>side.classList.add("open");
+$("#closeSide").onclick=()=>side.classList.remove("open");
+buildNav();
+const h=(location.hash||"").slice(1);
+go(byId[h]?h:null,false);
+</script>
+
+</body></html>
