@@ -1,0 +1,11 @@
+GitHub 網站版上傳說明
+
+1. 解壓缩 ZIP。
+2. 在 GitHub 儲存庫首頁，選 Add file → Upload files。
+3. 將本資料夾內的 index.html、assets、downloads 一起拖進上傳區。
+   請上传資料夾裡面的項目，不要把外層 Illustrator_GitHub網站版 一起上傳，也不要只上傳 ZIP。
+4. 確认根目錄的 index.html 將更新，提交變更。
+
+原本的 97 頁教學、10 份下載素材與授課勾選功能保留。
+授課紀錄依瀏覽器與網站來源儲存；由本機檔案換到 GitHub Pages 前，先匯出進度，在網站匯入。
+首頁需要 assets/lessons.js；下載功能需要 downloads 內的檔案。
