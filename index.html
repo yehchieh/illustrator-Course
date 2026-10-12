@@ -6,21 +6,23 @@
 @media print{aside,.top,.toolbar,.page-list,footer,.help{display:none}.layout{display:block}main{padding:0}.lesson-image{border:0}details{display:none}}
 .viewer:has(+ details[open]) .lesson-image{max-height:680px;width:auto;max-width:100%;margin:auto;object-fit:contain}.viewer.zoom:has(+ details[open]) .lesson-image{max-height:none;width:100%;max-width:none}</style></head><body>
 <a class="skip" href="#main">跳到教學內容</a>
-<header class="top"><div class="brand"><small>DESIGN CLASS / LEARNING LIBRARY</small>Illustrator 功能教學</div><div class="subtle">第二週與延伸教材 · 102 頁 · 功能索引與練習素材</div><button class="btn mobile-toggle" id="menu" aria-expanded="false">功能目錄</button></header>
+<header class="top"><div class="brand"><small>DESIGN CLASS / LEARNING LIBRARY</small>Illustrator 功能教學</div><div class="subtle">第二週與延伸教材 · 109 頁 · 功能索引與練習素材</div><button class="btn mobile-toggle" id="menu" aria-expanded="false">功能目錄</button></header>
 <div class="layout"><aside id="sidebar"><label for="search" class="eyebrow">搜尋功能 / 操作 / 快捷鍵</label><input id="search" type="search" placeholder="例如：鋼筆、遮色片、Ctrl" autocomplete="off"><nav id="nav" aria-label="功能分類"></nav><p class="help">點選功能即可開啟教學。<br>前 91 頁依 PDF 順序；新增教學接續於後。</p></aside><main id="main" tabindex="-1"></main></div>
 <script src="assets/lessons.js"></script>
 <script>
 const {pages,groups}=window.lessonData,main=document.getElementById('main'),search=document.getElementById('search');let active=-1;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const footer='<footer>內容依據：Illustrator_第二週_鋼筆練習整合版_v2.pdf（原 PDF 共 91 頁，第 92–102 頁依本次提供的 Illustrator_對話框教學_可編輯版.pdf 更新）。第 98–102 頁依本次提供的 Illustrator_文字轉折滑順_可編輯版.pdf 更新。保留原講義圖解及教學文字。<br>快捷鍵：Windows 使用 Ctrl / Alt，Mac 使用 Cmd / Option；實際操作以講義各頁標示為準。</footer>';
-function nav(){document.getElementById('nav').innerHTML='<a href="#home"'+(active===-1?' class="active" aria-current="page"':'')+'>所有功能<span>102 頁</span></a>'+groups.map((g,i)=>`<a href="#page-${g[1]}"${active===i?' class="active" aria-current="page"':''}>${esc(g[0])}<span>${g[1]}–${g[2]}</span></a>`).join('')}
-function home(){active=-1;nav();main.innerHTML='<div class="eyebrow">選一個功能，開始練習</div><h1>今天想學哪個工具？</h1><p class="intro">從文字造型、鋼筆路徑到圖片遮色片。點選下方單元，直接查看操作與示意圖。</p><div class="cards">'+groups.map((g,i)=>`<a class="card" href="#page-${g[1]}"><span class="pill">${i>=28?'新增文字效果':i>=25?'新增對話框教學':i<15?'基礎與課堂操作':i===24?'教材索引':'延伸教學'}</span><strong>${esc(g[0])}</strong><span>${g[2]-g[1]+1} 頁教學 · 教學第 ${g[1]}–${g[2]} 頁 →</span></a>`).join('')+'</div>'+footer}
-function lesson(n){n=Math.max(1,Math.min(pages.length,n));const p=pages[n-1],g=groups[p.group];active=p.group;nav();main.innerHTML=`<div class="eyebrow">${esc(g[0])} / 教學第 ${n} 頁</div><h1>${esc(p.title)}</h1><div class="page-list" aria-label="本單元頁面">${pages.filter(x=>x.group===p.group).map(x=>`<a href="#page-${x.n}" class="${x.n===n?'current':''}" ${x.n===n?'aria-current="page"':''}>${x.n} · ${esc(x.title)}</a>`).join('')}</div><div class="toolbar"><div><button class="btn" id="prev" ${n===1?'disabled':''}>← 上一頁</button> <button class="btn" id="next" ${n===pages.length?'disabled':''}>下一頁 →</button></div><div><span class="subtle">${n} / ${pages.length}　</span><button class="btn" id="zoom" aria-pressed="false">放大圖解</button></div></div><div class="viewer" id="viewer"><img class="lesson-image" src="${p.image}" alt="第 ${n} 頁：${esc(p.title)}；完整文字列於下方"></div><details ${p.tutorial?'open':''}><summary>查看本頁文字（可選取複製）</summary><div class="transcript">${esc(p.text)}</div></details><div class="toolbar"><a class="btn" href="#home">回到所有功能</a><a class="btn" href="#page-${n<pages.length?n+1:1}">${n<pages.length?'繼續下一頁 →':'回到第一頁'}</a></div>`+footer;
- document.getElementById('prev').onclick=()=>location.hash='page-'+(n-1);document.getElementById('next').onclick=()=>location.hash='page-'+(n+1);document.getElementById('zoom').onclick=e=>{let z=document.getElementById('viewer').classList.toggle('zoom');e.target.textContent=z?'恢復大小':'放大圖解';e.target.setAttribute('aria-pressed',z)};
+const footer='<footer>內容依據：Illustrator_第二週_鋼筆練習整合版_v2.pdf（原 PDF 共 91 頁，第 92–109 頁依本次提供的 Illustrator_對話框教學_可編輯版.pdf 更新）。第 98–109 頁依本次提供的 Illustrator_文字轉折滑順_可編輯版.pdf 更新。第 103–109 頁來源：261012-Illustrator_霓虹燈效果.pdf。第 106–109 頁來源：261012-Illustrator_幾何形狀建立.pdf。保留原講義圖解及教學文字。<br>快捷鍵：Windows 使用 Ctrl / Alt，Mac 使用 Cmd / Option；實際操作以講義各頁標示為準。</footer>';
+function nav(){document.getElementById('nav').innerHTML='<a href="#home"'+(active===-1?' class="active" aria-current="page"':'')+'>所有功能<span>109 頁</span></a>'+groups.map((g,i)=>`<a href="#page-${g[1]}"${active===i?' class="active" aria-current="page"':''}>${esc(g[0])}<span>${g[1]}–${g[2]}</span></a>`).join('')}
+function home(){active=-1;nav();main.innerHTML='<div class="eyebrow">選一個功能，開始練習</div><h1>今天想學哪個工具？</h1><p class="intro">從文字造型、鋼筆路徑到圖片遮色片。點選下方單元，直接查看操作與示意圖。</p><div class="cards">'+groups.map((g,i)=>`<a class="card" href="#page-${g[1]}"><span class="pill">${i===25?'重要觀念':i>=30?'新增筆畫外觀':i>=29?'新增文字效果':i>=26?'新增對話框教學':i<15?'基礎與課堂操作':i===24?'教材索引':'延伸教學'}</span><strong>${esc(g[0])}</strong><span>${g[2]-g[1]+1} 頁教學 · 教學第 ${g[1]}–${g[2]} 頁 →</span></a>`).join('')+'</div>'+footer}
+const lessonOrder=groups.flatMap(g=>Array.from({length:g[2]-g[1]+1},(_,i)=>g[1]+i));
+function adjacent(n,delta){return lessonOrder[lessonOrder.indexOf(n)+delta]}
+function lesson(n){n=Math.max(1,Math.min(pages.length,n));const p=pages[n-1],g=groups[p.group];active=p.group;nav();main.innerHTML=`<div class="eyebrow">${esc(g[0])} / 教學第 ${n} 頁</div><h1>${esc(p.title)}</h1><div class="page-list" aria-label="本單元頁面">${pages.filter(x=>x.group===p.group).map(x=>`<a href="#page-${x.n}" class="${x.n===n?'current':''}" ${x.n===n?'aria-current="page"':''}>${x.n} · ${esc(x.title)}</a>`).join('')}</div><div class="toolbar"><div><button class="btn" id="prev" ${n===1?'disabled':''}>← 上一頁</button> <button class="btn" id="next" ${!adjacent(n,1)?'disabled':''}>下一頁 →</button></div><div><span class="subtle">${n} / ${pages.length}　</span><button class="btn" id="zoom" aria-pressed="false">放大圖解</button></div></div><div class="viewer" id="viewer"><img class="lesson-image" src="${p.image}" alt="第 ${n} 頁：${esc(p.title)}；完整文字列於下方"></div><details ${p.tutorial?'open':''}><summary>查看本頁文字（可選取複製）</summary><div class="transcript">${esc(p.text)}</div></details><div class="toolbar"><a class="btn" href="#home">回到所有功能</a><a class="btn" href="#page-${adjacent(n,1)||1}">${adjacent(n,1)?'繼續下一頁 →':'回到第一頁'}</a></div>`+footer;
+ document.getElementById('prev').onclick=()=>location.hash='page-'+adjacent(n,-1);document.getElementById('next').onclick=()=>location.hash='page-'+adjacent(n,1);document.getElementById('zoom').onclick=e=>{let z=document.getElementById('viewer').classList.toggle('zoom');e.target.textContent=z?'恢復大小':'放大圖解';e.target.setAttribute('aria-pressed',z)};
 }
 function results(q){active=-1;nav();const terms=q.toLowerCase().trim().split(/\s+/),found=pages.filter(p=>terms.every(t=>(p.title+' '+p.text+' '+groups[p.group][0]).toLowerCase().includes(t)));main.innerHTML='<div class="eyebrow">全文搜尋</div><h1>搜尋「'+esc(q)+'」</h1><p class="intro" role="status">找到 '+found.length+' 頁相關教學</p><div class="cards">'+found.map(p=>`<a class="card" href="#page-${p.n}"><span class="pill">${esc(groups[p.group][0])}</span><strong>${esc(p.title)}</strong><span>教學第 ${p.n} 頁 · 查看教學 →</span></a>`).join('')+'</div>'+(!found.length?'<p class="empty">沒有找到相關頁面，請改用較短的詞，例如「鋼筆」「遮色片」或「筆刷」。</p>':'')+footer}
 function route(){const h=location.hash.slice(1);if(h.startsWith('search=')){search.value=decodeURIComponent(h.slice(7));results(search.value)}else{search.value='';let m=h.match(/^page-(\d+)$/);m?lesson(Number(m[1])):home()}document.getElementById('sidebar').classList.remove('open');document.getElementById('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0)}
-search.addEventListener('input',()=>{let q=search.value.trim();history.replaceState(null,'',q?'#search='+encodeURIComponent(q):'#home');q?results(q):home()});window.addEventListener('hashchange',route);document.getElementById('menu').onclick=e=>{let open=document.getElementById('sidebar').classList.toggle('open');e.target.setAttribute('aria-expanded',open)};document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,button')||e.altKey||e.ctrlKey||e.metaKey)return;let m=location.hash.match(/^#page-(\d+)$/);if(m&&['ArrowLeft','ArrowRight'].includes(e.key)){let n=Number(m[1])+(e.key==='ArrowRight'?1:-1);if(n>=1&&n<=pages.length)location.hash='page-'+n}});route();
+search.addEventListener('input',()=>{let q=search.value.trim();history.replaceState(null,'',q?'#search='+encodeURIComponent(q):'#home');q?results(q):home()});window.addEventListener('hashchange',route);document.getElementById('menu').onclick=e=>{let open=document.getElementById('sidebar').classList.toggle('open');e.target.setAttribute('aria-expanded',open)};document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,button')||e.altKey||e.ctrlKey||e.metaKey)return;let m=location.hash.match(/^#page-(\d+)$/);if(m&&['ArrowLeft','ArrowRight'].includes(e.key)){let n=adjacent(Number(m[1]),e.key==='ArrowRight'?1:-1);if(n>=1&&n<=pages.length)location.hash='page-'+n}});route();
 </script><script>
 // Teaching progress is stored locally, independently of the lesson content.
 const progressKey='illustrator-teaching-progress-v1';
@@ -64,34 +66,4 @@ home=function(){teachingHome();addResources()};lesson=function(n){teachingLesson
 const teachingRefresh=refreshTeaching;
 refreshTeaching=function(){const link=document.getElementById('resource-nav');if(link)link.remove();teachingRefresh();addResources()};
 addResources();
-</script>
-<script>
-// 加速翻頁：先保留圖片空間，並在背景預先載入前後頁與同單元的圖片。
-(function(){
- const st=document.createElement('style');
- st.textContent='.lesson-image{aspect-ratio:16/9;background:#fff linear-gradient(90deg,#fff 0%,#eef4f2 50%,#fff 100%) 0 0/200% 100%;animation:imgwait 1.2s linear infinite}.lesson-image.loaded{animation:none;background:#fff}@keyframes imgwait{to{background-position:-200% 0}}@media (prefers-reduced-motion:reduce){.lesson-image{animation:none}}';
- document.head.appendChild(st);
- const cache=new Map();
- function pre(k){if(k<1||k>pages.length||cache.has(k))return;const i=new Image();i.decoding='async';i.src=pages[k-1].image;cache.set(k,i);}
- const idle=window.requestIdleCallback||(f=>setTimeout(f,300));
- function warm(n){
-  [n+1,n-1,n+2].forEach(pre);
-  idle(()=>{const g=pages[n-1].group;pages.filter(x=>x.group===g).forEach(x=>pre(x.n));});
- }
- const fastLesson=lesson;
- lesson=function(n){
-  fastLesson(n);
-  n=Math.max(1,Math.min(pages.length,n));
-  const img=main.querySelector('.lesson-image');
-  if(img){
-   img.fetchPriority='high';img.decoding='async';
-   const done=()=>{img.classList.add('loaded');warm(n);};
-   if(img.complete&&img.naturalWidth)done();else{img.addEventListener('load',done,{once:true});img.addEventListener('error',()=>img.classList.add('loaded'),{once:true});}
-  }
- };
- // 滑鼠移到頁碼或單元連結上時，先載入那一頁
- document.addEventListener('pointerover',e=>{const a=e.target.closest('a[href^="#page-"]');if(a)pre(Number(a.getAttribute('href').slice(6)));});
- // 目前若已在某一頁，立即套用
- const m=location.hash.match(/^#page-(\d+)$/);if(m)lesson(Number(m[1]));
-})();
 </script></body></html>
